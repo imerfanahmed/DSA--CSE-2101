@@ -3,10 +3,10 @@ using namespace std;
 
 void array_traverse(int *arr, int size)
 {
-  for(int i=0;i<size;i++){
-      cout<<arr[i]<<" ";
-  }
-  cout<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
 }
 
 
@@ -57,3 +57,4 @@ int main(){
     array_delete(arr,8,7);
     array_search(arr,8,7);
 }
+
