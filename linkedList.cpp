@@ -1,4 +1,4 @@
-#include <bits\stdc++.h>
+#include <iostream>
 using namespace std;
 class Node
 {
@@ -114,15 +114,35 @@ public:
         }
         cout << endl;
     }
+
+    //searching
+    int search(int d){
+        Node *curr = head;
+        int count =-1;
+        while(curr!=NULL){
+            count++;
+            if(curr->data == d){
+                return count;
+            }
+            else{
+                curr = curr->next;
+            }
+        
+        }
+        return -1;
+    }
 };
 
 int main(){
     LinkedList list;
-    list.insertAtEnd(1);
-    list.insertAtEnd(2);
-    list.insertAtEnd(3);
-    list.insertAtEnd(4);
-    list.insertAtEnd(5);
-    list.deleteAtPos(3);
+    
+    list.insertAtEnd(10);
+    list.insertAtEnd(15);
+    list.insertAtEnd(20);
+    list.insertAtEnd(45);
+    list.insertAtEnd(100);
+    //list.deleteAtPos(3);
     list.print();
+    int result = list.search(120);
+    result==-1?cout<<"Data Not Found"<<endl:cout<<"Data found at "<< result<<endl;
 }
