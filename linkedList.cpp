@@ -104,6 +104,27 @@ public:
         delete temp;
     }
 
+    //search
+    void search(int d)
+    {
+        if (head == NULL)
+        {
+            cout << "List is empty" << endl;
+            return;
+        }
+        Node *curr = head;
+        while (curr != NULL)
+        {
+            if (curr->data == d)
+            {
+                cout << "Found" << endl;
+                return;
+            }
+            curr = curr->next;
+        }
+        cout << "Not Found" << endl;
+    }
+    
     void print()
     {
         Node *curr = head;
@@ -114,6 +135,7 @@ public:
         }
         cout << endl;
     }
+
 };
 
 int main(){
@@ -124,5 +146,6 @@ int main(){
     list.insertAtEnd(4);
     list.insertAtEnd(5);
     list.deleteAtPos(3);
+    list.search(3);
     list.print();
 }
