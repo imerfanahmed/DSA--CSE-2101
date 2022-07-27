@@ -1,4 +1,4 @@
-#include <bits\stdc++.h>
+#include <iostream>
 using namespace std;
 class Node
 {
@@ -148,4 +148,6 @@ int main(){
     list.deleteAtPos(3);
     list.search(3);
     list.print();
+    int result = list.search(120);
+    result==-1?cout<<"Data Not Found"<<endl:cout<<"Data found at "<< result<<endl;
 }
