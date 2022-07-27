@@ -104,9 +104,10 @@ public:
         delete temp;
     }
 
-    //search
+    // search
     void search(int d)
     {
+        int position = 0;
         if (head == NULL)
         {
             cout << "List is empty" << endl;
@@ -115,16 +116,17 @@ public:
         Node *curr = head;
         while (curr != NULL)
         {
+            position++;
             if (curr->data == d)
             {
-                cout << "Found" << endl;
+                cout << "Found at node " << position << endl;
                 return;
             }
             curr = curr->next;
         }
         cout << "Not Found" << endl;
     }
-    
+
     void print()
     {
         Node *curr = head;
@@ -135,10 +137,10 @@ public:
         }
         cout << endl;
     }
-
 };
 
-int main(){
+int main()
+{
     LinkedList list;
     list.insertAtEnd(1);
     list.insertAtEnd(2);
@@ -146,8 +148,10 @@ int main(){
     list.insertAtEnd(4);
     list.insertAtEnd(5);
     list.deleteAtPos(3);
-    list.search(3);
+    // list.search(3);
     list.print();
-    int result = list.search(120);
-    result==-1?cout<<"Data Not Found"<<endl:cout<<"Data found at "<< result<<endl;
+    list.search(5);
+    // Dont Uncomment it!!!
+    // This is experiment
+    //  result==-1?cout<<"Data Not Found"<<endl:cout<<"Data found at "<< result<<endl;
 }
